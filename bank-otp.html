@@ -1,0 +1,65 @@
+<!-- save this as bank-otp.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock Bank OTP Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .otp-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 80%;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="otp-container">
+    <h2>Enter OTP to Complete Transaction</h2>
+    <p>An OTP has been sent to your registered mobile number.</p>
+    <input type="text" id="otpInput" placeholder="Enter OTP" maxlength="6">
+    <br>
+    <button id="submitButton">Submit OTP</button>
+    <p id="statusMessage" style="color: green;"></p>
+  </div>
+
+  <script>
+    document.getElementById('submitButton').addEventListener('click', function() {
+      const otp = document.getElementById('otpInput').value;
+      if (otp === '123456') {
+        document.getElementById('statusMessage').innerText = 'OTP Verified Successfully!';
+      } else {
+        document.getElementById('statusMessage').innerText = 'Invalid OTP. Please try again.';
+      }
+    });
+  </script>
+</body>
+</html>
